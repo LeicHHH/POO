@@ -21,9 +21,9 @@ zippo("rattle", 13); // 1�
 
 }
 
-//3.-El valor de blimp cuando baffle es invocado es "rattle" 
+//3.-El valor de blimp cuando baffle es invocado es "rattle".
 //4.- El output es:
 //   ik
 //   rattle
 //   ping zoop
-//   boo-wa-ha-ha
+//   boo-wa-ha-ha 
