@@ -1,5 +1,5 @@
 package Asistente;
 
-public class Notifications {
+public class News {
 
 }

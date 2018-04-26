@@ -1,56 +1,51 @@
 package Asistente;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.URL;
-import java.time.Clock;
-import java.util.Scanner;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Tasks {
+	private int taskID;
+	private String taskText;
+	private Calendar taskDate;
+	private boolean read;
 	
+	public Tasks(int ID, String text, int year, int month, int day, boolean readed ) {
+		this.taskID = ID;
+		this.taskText = text;
+		taskDate.set(year,month,day);
+		this.read = readed;
 	
-	public Tasks() {
-		
 	}
 	
-	
-	
-	public void AddTask() throws IOException {
-		Scanner scanUser = new Scanner(System.in);
-		System.out.println("Ingrese la tarea:");
-		String NewTask = scanUser.nextLine();
-		WriteFile(NewTask);
-		System.out.println("Ingrese la fecha de la forma ddmmyy:");
-		NewTask = scanUser.nextLine();
-		WriteFile(NewTask);
-		System.out.println("Ingrese la hora de la forma hhmm");
-		NewTask = scanUser.nextLine();
-		WriteFile(NewTask);
-		scanUser.close();
+	public int getID() {
+		return this.taskID;
 	}
 	
-	public void ReadFile() throws IOException {
-		URL classesRootDir = getClass().getProtectionDomain().getCodeSource().getLocation();
-		String URLString = classesRootDir.toString();
-		@SuppressWarnings("resource")
-		FileReader fr = new FileReader(URLString + "/Tasks.txt");
-		    int i;
-		    while ((i=fr.read()) != -1)
-		      System.out.print((char) i);
+	public boolean getRead() {
+		return this.read;
 	}
 	
-	public void WriteFile(String ReceivedTask) throws IOException {
-		URL classesRootDir = getClass().getProtectionDomain().getCodeSource().getLocation();
-		String URLString = classesRootDir.toString();
-		@SuppressWarnings("resource")
-		FileWriter fw = new FileWriter(URLString + "/Tasks.txt");
-		fw.write(ReceivedTask);
+	public Calendar getDate() {
+		return this.taskDate;
 	}
 	
-	public static void main() {
-		
+	public String getText() {
+		return this.taskText;
 	}
-
+	
+	//public void setID(int ID) {
+	//	this.taskID = ID;
+	//}
+	
+	//public void setRead(boolean read) {
+		//this.read = read;
+	//}
+	
+	//public void setText(String taskText) {
+	//	this.taskText = taskText;
+	//}
+	
+//	public void setCalendar(int year, int month,int day) {
+//		this.taskDate.set(year, month, day);
+//	}
+	
 }

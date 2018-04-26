@@ -15,16 +15,21 @@ public class Assistant {
 		
 	}
     
+	
     public void AlertUser() {
     	
     }
+    
     public CurrentUserStatus() {
+    	
     	if(BusyUser()) {
     		
     	}
+    	
     	else {
     		Notification();
     	}
+    	
     }
 	
 }
