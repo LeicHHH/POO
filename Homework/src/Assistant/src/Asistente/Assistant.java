@@ -2,13 +2,29 @@ package Asistente;
 
 public class Assistant {
 	
-	private 
 	
-public Assistant(){
+    public Assistant() {
 	
-}
-	public boolean AskForNotifications() {
+ }
+    public boolean BusyUser() {
+    	
+    }
+    
+	public boolean Notification() {
+		
 		
 	}
+    
+    public void AlertUser() {
+    	
+    }
+    public CurrentUserStatus() {
+    	if(BusyUser()) {
+    		
+    	}
+    	else {
+    		Notification();
+    	}
+    }
 	
 }
