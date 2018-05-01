@@ -15,6 +15,7 @@ public class Tasks {
 		this.read = readed;
 	
 	}
+
 	
 	public int getID() {
 		return this.taskID;
@@ -31,21 +32,5 @@ public class Tasks {
 	public String getText() {
 		return this.taskText;
 	}
-	
-	//public void setID(int ID) {
-	//	this.taskID = ID;
-	//}
-	
-	//public void setRead(boolean read) {
-		//this.read = read;
-	//}
-	
-	//public void setText(String taskText) {
-	//	this.taskText = taskText;
-	//}
-	
-//	public void setCalendar(int year, int month,int day) {
-//		this.taskDate.set(year, month, day);
-//	}
 	
 }

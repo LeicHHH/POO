@@ -31,5 +31,8 @@ public class Assistant {
     	}
     	
     }
+    public void Feed() {
+    	
+    }
 	
 }

@@ -3,20 +3,18 @@ package Asistente;
 import java.util.ArrayList;
 
 
-public class taskList {
-	private Tasks newTask;         
-	private ArrayList<Object> taskArray;
+public class taskList {        
+	private ArrayList<Tasks> taskArray;
 	
 	
 	public taskList() {
-		taskArray = new ArrayList<Object>();
-		newTask = new Tasks();
+		taskArray = new ArrayList<Tasks>();
 	}
+	
 
-	public void addTask(String text, int year, int month , int day ) {
-		newTask.setCalendar(year, month, day);
-		newTask.setText(text);
-		taskArray.add(newTask);
+	public void addTask(int ID,String text, int year, int month , int day,boolean readed){	
+		ID++;
+		taskArray.add(new Tasks(ID,text,year,month,day,readed));
 	}
 	
 	public void printTasks() {
@@ -26,34 +24,35 @@ public class taskList {
 	}
 	
 	
-	public Tasks searchTask(String search) {
-		for(Object N : taskArray){
-	        if(newTask.getText() != search  && newTask.getText().contains(search)) {
-	        	return newTask;
+	public int searchTask(int searchID) {
+		for(Tasks N : taskArray){
+	        if(N.getID() == searchID ) {
+	        	return searchID;
 	        }
-	           
+	        else {
+	        	System.out.println("No encontrado");
+	        }          
 	    }
+		return 0;
 	}
 	
-	public void removeTask() {
-		
+	public void removeTask(int searchID) {
+		int removeTHIS = searchTask(searchID);
+		taskArray.remove(removeTHIS);
 	}
 	/**
 	 * @return the taskArray
 	 */
-	public ArrayList<Object> getTaskArray() {
+	public ArrayList<Tasks> getTaskArray() {
 		return taskArray;
 	}
 
 	/**
 	 * @param taskArray the taskArray to set
 	 */
-	public void setTaskArray(ArrayList<Object> taskArray) {
+	public void setTaskArray(ArrayList<Tasks> taskArray) {
 		this.taskArray = taskArray;
 	}
-	
-
-
 
 
 }
