@@ -1,7 +1,7 @@
 package Asistente;
 
 import java.util.ArrayList;
-
+import java.util.Calendar;
 
 public class taskList {        
 	private ArrayList<Tasks> taskArray;
@@ -24,10 +24,10 @@ public class taskList {
 	}
 	
 	
-	public int searchTask(int searchID) {
+	public int searchTask(Calendar Date) {
 		for(Tasks N : taskArray){
-	        if(N.getID() == searchID ) {
-	        	return searchID;
+	        if(Date.equals(N.getDate()) ) {
+	        	return N.getID();
 	        }
 	        else {
 	        	System.out.println("No encontrado");
@@ -36,9 +36,8 @@ public class taskList {
 		return 0;
 	}
 	
-	public void removeTask(int searchID) {
-		int removeTHIS = searchTask(searchID);
-		taskArray.remove(removeTHIS);
+	public void removeTask(Calendar Date) {
+		taskArray.remove(searchTask(Date));
 	}
 	/**
 	 * @return the taskArray
