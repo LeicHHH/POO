@@ -8,12 +8,13 @@ public class Tasks {
 	private Calendar taskDate;
 	private boolean read;
 	
+
+	
 	public Tasks(int ID, String text, int year, int month, int day, boolean readed ) {
 		this.taskID = ID;
 		this.taskText = text;
 		taskDate.set(year,month,day);
 		this.read = readed;
-	
 	}
 
 	
@@ -32,5 +33,6 @@ public class Tasks {
 	public String getText() {
 		return this.taskText;
 	}
+
 	
 }

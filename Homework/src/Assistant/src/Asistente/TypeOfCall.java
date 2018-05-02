@@ -1,5 +1,5 @@
 package Asistente;
 
-public enum TypeOfCall {
-
+ enum TypeOfCall {
+	 Received, Lost, Started;
 }

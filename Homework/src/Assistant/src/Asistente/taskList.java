@@ -13,7 +13,6 @@ public class taskList {
 	
 
 	public void addTask(int ID,String text, int year, int month , int day,boolean readed){	
-		ID++;
 		taskArray.add(new Tasks(ID,text,year,month,day,readed));
 	}
 	
@@ -38,20 +37,11 @@ public class taskList {
 	
 	public void removeTask(Calendar Date) {
 		taskArray.remove(searchTask(Date));
+		System.out.println("Task removed");
 	}
 	/**
 	 * @return the taskArray
 	 */
-	public ArrayList<Tasks> getTaskArray() {
-		return taskArray;
-	}
-
-	/**
-	 * @param taskArray the taskArray to set
-	 */
-	public void setTaskArray(ArrayList<Tasks> taskArray) {
-		this.taskArray = taskArray;
-	}
 
 
 }
