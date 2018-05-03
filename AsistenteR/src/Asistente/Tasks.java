@@ -1,11 +1,12 @@
 package Asistente;
 
-import java.util.Calendar;
 
 public class Tasks {
 	private int taskID;
 	private String taskText;
-	private Calendar taskDate;
+	private int year;
+	private int month;
+	private int day;
 	private boolean read;
 	
 
@@ -13,7 +14,9 @@ public class Tasks {
 	public Tasks(int ID, String text, int year, int month, int day, boolean readed ) {
 		this.taskID = ID;
 		this.taskText = text;
-		this.taskDate.set(year, month, day);
+		this.year = year;
+		this.month = month;
+		this.day = day;
 		this.read = readed;
 	}
 
@@ -26,13 +29,20 @@ public class Tasks {
 		return this.read;
 	}
 	
-	public String getDate() {
-		return this.taskDate.toString();
-	}
-	public Calendar getSearchedDate() {
-		return this.taskDate;
+	public void PrintDate() {
+
 	}
 	
+	public int getYear() {
+		return this.year;
+	}
+	
+	public int getMonth() {
+		return this.month;
+	}
+	public int getDay() {
+		return this.day;
+	}
 	public String getText() {
 		return this.taskText;
 	}

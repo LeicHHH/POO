@@ -50,7 +50,6 @@ public class Assistant {
     	int month = in.nextInt();
     	System.out.println("Day:");
     	int day = in.nextInt();
-    	System.out.println("Mark as read:");
     	boolean readed = true;
     	this.TaskList1.addTask(ID, text, year, month, day, readed);
     	ID++;

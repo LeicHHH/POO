@@ -1,7 +1,6 @@
 package Asistente;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class taskList {        
 	private ArrayList<Tasks> taskArray;
@@ -21,14 +20,14 @@ public class taskList {
 		 System.out.println("Empty toDo List");
 	    else
 		for(Tasks task: this.taskArray) {
-			System.out.println("Description:" + task.getText() + "Date:" + task.getDate());
+			System.out.println("Description:" + task.getText() + "\nDate:" + task.getYear() + "/" + task.getMonth() + "/" + task.getDay());
 	}
 }
 	
 	
-	public int searchTask(Calendar Date) {
+	public int searchTask(int ID) {
 		for(Tasks N : taskArray){
-	        if(Date.equals(N.getSearchedDate()) ) {
+	        if(ID == N.getID() ) {
 	        	return N.getID();
 	        }
 	        else {
@@ -38,8 +37,8 @@ public class taskList {
 		return 0;
 	}
 	
-	public void removeTask(Calendar Date) {
-		taskArray.remove(searchTask(Date));
+	public void removeTask(int ID) {
+		taskArray.remove(searchTask(ID));
 		System.out.println("Task removed");
 	}
 	/**
