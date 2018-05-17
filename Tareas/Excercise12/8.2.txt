@@ -1,0 +1,3 @@
+banana() :multiplica a kiwi por cada elemento i de a[]
+grapefruit(): si el elemento a[i] es igual a grape devuelve la posicion del elemento
+pineapple(): por cada pine igual a apple en a[] suma 1 a pear
