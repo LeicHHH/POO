@@ -11,6 +11,9 @@ public class Card {
 
     public static final String[] SUITS = {
         "Clubs", "Diamonds", "Hearts", "Spades"};
+    private static ArrayList<Card> cards = new ArrayList<Card>();
+	
+    private static Card card;
 
     private final int rank;
 
@@ -28,7 +31,19 @@ public class Card {
      * Returns a negative integer if this card comes before
      * the given card, zero if the two cards are equal, or
      * a positive integer if this card comes after the card.
-     */
+     */ 
+
+    public static void makeDeck() {
+		
+		for (int suit = 0; suit <= 3; suit++) {
+		   for (int rank = 1; rank <= 13; rank++) {
+		     card = new Card(rank,suit);
+		      cards.add(card);
+		}
+	}
+	
+}
+
     public int compareTo(Card that) {
     	if(this.rank == 1 && that.rank > 1) {
     		return 1;
