@@ -1,0 +1,8 @@
+1.- x = x + 7; int x; y Point p son locales en el metodo riddle
+    int x = 5; Pint(1,2), son locales en el metodo main
+
+2.- riddle(x,blank) = (15)
+    x = 5
+    blank.x = 1
+    blank.y = 2
+    

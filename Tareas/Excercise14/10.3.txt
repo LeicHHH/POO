@@ -1,0 +1,15 @@
+1 .-
+
+public static void main(String[] args) {
+Rectangle box1 = new Rectangle(2, 4, 7, 9);  // Crea un rectángulo = box1 
+Point p1 = findCenter(box1); // Crea un punto = p1 en el centro del rectángulo = box1
+printPoint(p1); // Muestra las coordeanadas del punto = p1
+box1.grow(1, 1); // Incrementa el tamaño del rectángulo
+Point p2 = findCenter(box1); //Crea un nuevo punto = p2 en el centro del nuevo rectángulo
+printPoint(p2);//Muestra las coordenadas del punto = p2
+}
+
+2.- La salida del programa son las coordenadas del centro del rectángulo box1 instanciadas en p1 y p2 
+
+
+3.- No, el método findCenter() genera nuevos objetos punto cada vez que es invocado.

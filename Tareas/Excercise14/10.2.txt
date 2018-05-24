@@ -1,0 +1,2 @@
+1.- Resta los valores x e y de los objetos punto x2-x1 e y2-y1 para calcular la distancia     en linea recta
+2.- raiz de 34
