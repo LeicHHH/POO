@@ -1,31 +1,36 @@
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import control.Calls;
 import control.task;
-import control.news;
+import view.feedController;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import view.taskController;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.collections.FXCollections;
+
 
 public class Main extends Application {
-          private VBox mainLayout;
+	      private taskController taskController;
+	      private feedController feedController;
+	      
+	      private VBox mainLayout;
           private Stage primaryStage;
-          private taskController taskController = new taskController();;
+    @FXML private StackPane taskStackPane;
+    @FXML private StackPane newsStackPane = new StackPane();
     @FXML private ListView<task> taskListView;
-    @FXML private ListView<news> newsList = new ListView<news>();
-    @FXML private ListView<Calls> callList =  new ListView<Calls>();
+    @FXML private ListView<Calls> callList;
     
-    public Main() {
+    public void initialize() {
+    	this.primaryStage = new Stage();
+    	this.taskStackPane  = new StackPane();
+    	this.taskController = new taskController();
+        this.feedController = new feedController();
+        showNews();
     }
     
 	public void start(Stage primaryStage) throws IOException {
@@ -39,17 +44,24 @@ public class Main extends Application {
 	    primaryStage.show();	
 	}
 
-	
-	private void showTaskList() {
-		this.taskListView = new ListView<>();
-		ObservableList<task> taskObservable = FXCollections.observableList(taskController.getList().getList());
-	    taskListView.setItems(taskObservable);
-	    taskListView.setCellFactory(Callback<ListView<task>,ListCell<task>>);
+	      private void showNews() {
+	    	  newsStackPane.getChildren().add(feedController.generateObservableNews());  		
+	      }
+	      
+	      private void showTaskList() {
+		  try {
+			taskStackPane.getChildren().add(taskController.addTask());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
- public void updateButton() {
-		System.out.println(this.taskController.getList().getList().get(0).getText());
-
+      @FXML private void updateButton() throws IOException, InterruptedException {
+	 showTaskList();
 	}
  public void removeTaskButton() {
     	taskController.removeButton(taskListView.getSelectionModel().getSelectedIndex());
