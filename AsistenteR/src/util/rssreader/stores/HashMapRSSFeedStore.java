@@ -2,8 +2,6 @@ package util.rssreader.stores;
 
 import util.rssreader.RSSFeedStore;
 import util.rssreader.RSSItem;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 

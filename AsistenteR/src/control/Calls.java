@@ -1,20 +1,26 @@
 package control;
 
-public class Calls {
-	private String LLamada;
+public class calls {
+	private String nombreContacto;
+	private int Number;
+	private String areaCode;
+	private String horaLlamada;
 	
-	public Calls(String Llamada) {
-		
-		this.LLamada = Llamada;
+	public calls(int number, String areaCode, String NombreContacto,String horaLLamada) {
+		this.nombreContacto = NombreContacto;
+		this.Number = number;
+		this.areaCode = areaCode;
+		this.horaLlamada = horaLLamada;
 	}
 	
-	public String getLLamada() {
-		return this.LLamada;
+	public void printCall() {
+          System.out.println("LLamada de :" + this.nombreContacto + "Hora llamada:" + this.horaLlamada );
 	}
 	
 	public void SetLlamada(String LLamada) {
-		this.LLamada = LLamada;
+		this.nombreContacto = LLamada;
 	}
+	
 	
 
 }
