@@ -1,5 +1,9 @@
 package control;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.scene.control.ListCell;
@@ -10,13 +14,13 @@ import util.rssreader.RSSItem;
 import util.rssreader.stores.ArrayListRSSFeedStore;
 
 
-public class feedController {
+public class feedList {
 	      
           private ArrayListRSSFeedStore feedStore;
           private ArrayList<RSSItem> listRSS;
           private ListView<RSSItem> newsListView;
           
-          public feedController() {
+          public feedList() {
         	  this.feedStore  = new ArrayListRSSFeedStore();
         	  RSSFeedReader.read("http://rss.cnn.com/rss/edition.rss",feedStore);
         	  this.listRSS = feedStore.getList();
@@ -36,9 +40,20 @@ public class feedController {
     	                      protected void updateItem(RSSItem r, boolean bln) {
     	                          super.updateItem(r, bln);
     	                          if (r != null) {
-    	                              setText("Title:\n" + r.getTitle() +  "\nDate: " + r.getPubDate() + "\nLink:\n"+ r.getLink()  );
+    	                              setText("Title:\n" + r.getTitle() +  "\nDate: " + r.getPubDate() + "\n Click to open LINK"  );
+    	                             
+    	                            	    newsListView.setOnMouseClicked(event -> {
+    	                            	    	try {
+													Desktop.getDesktop().browse(new URI(r.getLink()));
+												} catch (IOException | URISyntaxException e) {
+													// TODO Auto-generated catch block
+													e.printStackTrace();
+												}
+												
+											});
+    	                            	}
     	                          }
-    	                      }
+    	                      
     	   
     	                  };
     	                   
